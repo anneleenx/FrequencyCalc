@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="customColorBackgroundWindow">#ECE4B7</color>
+    <color name="customTextViewColor">#311E10</color>
+    <color name="customTextColor">#110A06</color>
+    <color name="customResultTextColor">#110A06</color>
+    <color name="customNormalButtonGradientTop">#B2B578</color>
+    <color name="customNormalButtonGradientBottom">#EABE7C</color>
+    <color name="customPressedButtonGradientTop">#E37C56</color>
+    <color name="customPressedButtonGradientBottom">#AB8B5B</color>
+    <color name="customPressedButtonBorder">#3C3D28</color>
+    <color name="customInputElementBackground">#ffebee</color>
+</resources>

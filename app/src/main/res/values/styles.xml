@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="CustomTheme" parent="@android:style/Theme.Black">
+        <item name="android:windowBackground">@color/customColorBackgroundWindow</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <!--<item name="android:textSize">20dp</item>-->
+        <item name ="android:fontFamily">sans-serif</item>
+        <item name="android:buttonStyle">@style/CustomButtonTheme</item>
+    </style>
+
+    <style name="CustomTextViewTheme" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/customTextViewColor</item>
+        <item name="android:layout_height">38dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CustomButtonTheme" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/button</item>
+        <item name="android:height">45dp</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.Holo.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/customTextColor</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor" tools:ignore="DuplicateDefinition">@color/customTextViewColor</item>
+    </style>
+
+    <style name="CustomEditText" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

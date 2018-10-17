@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Frequency Calculator</string>
+    <string name="enter_base_frequency_value_hz">Enter base frequency value (Hz):</string>
+    <string name="calculate_backward">Calculate backward:</string>
+    <string name="enter_number_of_semitones">Enter number of semitones:</string>
+    <string name="calculate">Calculate</string>
+    <string name="exit">Exit</string>
+</resources>
