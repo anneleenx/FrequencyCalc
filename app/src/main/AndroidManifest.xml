@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_note"
         android:theme="@style/CustomTheme"
         android:supportsRtl="true">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:theme="@style/CustomTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
