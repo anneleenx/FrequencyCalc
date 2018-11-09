@@ -7,7 +7,7 @@
     android:fillViewport="true">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="vertical"
         android:padding="5dp"
@@ -66,24 +66,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/resultView"
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="copyToClipboard"
+                android:textAlignment="center"
+                android:textColor="@color/customResultTextColor"
+                android:textSize="24sp"
+                android:freezesText="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button2"
+                tools:text="result" />
+
             <Button
                 android:id="@+id/button3"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="11dp"
+                android:layout_height="wrap_content"
                 android:baselineAligned="false"
                 android:onClick="exitApp"
                 android:text="@string/exit"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultView" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/resultView"
+                android:id="@+id/resultPercentage"
                 android:layout_width="match_parent"
-                android:layout_height="185dp"
+                android:layout_height="81dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -92,21 +108,23 @@
                 android:textAlignment="center"
                 android:textColor="@color/customResultTextColor"
                 android:textSize="24sp"
+                android:freezesText="true"
                 app:layout_constraintBottom_toTopOf="@+id/button3"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button2"
-                app:layout_constraintVertical_bias="0.031"
-                tools:text="aad" />
+                app:layout_constraintTop_toBottomOf="@+id/resultView"
+                tools:text="percentage from base" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:onClick="calculateNewFrequency"
                 android:text="@string/calculate"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>

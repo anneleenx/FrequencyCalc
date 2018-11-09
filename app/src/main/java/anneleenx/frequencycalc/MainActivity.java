@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -14,9 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 import static java.lang.Integer.getInteger;
 
@@ -41,11 +38,27 @@ public class MainActivity extends Activity {
             Toast.makeText(getBaseContext(), "Enter valid number of semitones", Toast.LENGTH_SHORT).show();
         } else {
             CheckBox backwardCalculateCheckbox = findViewById(R.id.backwardCheckbox);
-            float result = getCalculatedFreqeuncy(Integer.valueOf(baseFrequency), Integer.valueOf(numberOfSemitones), backwardCalculateCheckbox.isChecked());
+            Integer baseValue = Integer.valueOf(baseFrequency);
+            float result = getCalculatedFreqeuncy(baseValue, Integer.valueOf(numberOfSemitones), backwardCalculateCheckbox.isChecked());
 
-            TextView textView = findViewById(R.id.resultView);
-            textView.setText(String.valueOf(result));
+            TextView textViewResult = findViewById(R.id.resultView);
+            textViewResult.setText(String.valueOf(result));
+
+            TextView textViewPercentage = findViewById(R.id.resultPercentage);
+            textViewPercentage.setText("Difference in percentage: \n" + String.valueOf(getPercentageValue(baseValue, result, backwardCalculateCheckbox.isChecked())) + "%");
         }
+    }
+
+    private float getPercentageValue(int baseValue, float resultValue, boolean isReverse){
+        float result;
+        BigDecimal bigDecimal;
+        if (baseValue > resultValue) {
+            bigDecimal = new BigDecimal(((baseValue - resultValue) / resultValue) * 100, MathContext.DECIMAL32);
+        } else {
+            bigDecimal = new BigDecimal(((resultValue - baseValue) / resultValue) * 100, MathContext.DECIMAL32);
+        }
+        result = bigDecimal.setScale(2, RoundingMode.HALF_UP).floatValue();
+        return isReverse ? -result: result;
     }
 
     private float getCalculatedFreqeuncy(int frequency, int semitones, boolean isReverse){
@@ -65,7 +78,7 @@ public class MainActivity extends Activity {
     }
 
     public void copyToClipboard(View view) {
-        TextView resultView = findViewById(R.id.resultView);
+        TextView resultView = findViewById(R.id.resultPercentage);
         if (!resultView.getText().toString().isEmpty()) {
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("resultValue", resultView.getText());
