@@ -1,107 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:orientation="vertical"
-    android:padding="5dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView1"
-        style="@style/CustomTextViewTheme"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:text="@string/enter_base_frequency_value_hz" />
-
-    <EditText
-        android:id="@+id/baseFrequency"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:ems="10"
-        android:hint="Base frequency"
-        android:inputType="number"
-        android:theme="@style/CustomEditText" />
-
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/CustomTextViewTheme"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:text="@string/enter_number_of_semitones" />
-
-    <EditText
-        android:id="@+id/numberOfSemitones"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:ems="10"
-        android:hint="Number of semitones"
-        android:inputType="number"
-        android:theme="@style/CustomEditText" />
-
-    <CheckBox
-        android:id="@+id/backwardCheckbox"
-        style="@style/CustomCheckboxTheme"
-        android:layout_width="match_parent"
-        android:button="@null"
-        android:checked="false"
-        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
-        android:text="@string/calculate_backward"
-        android:textAlignment="viewStart"
-        android:textColor="@color/customTextViewColor"
-        android:theme="@style/CustomCheckboxTheme" />
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="11dp"
-            android:baselineAligned="false"
-            android:onClick="exitApp"
-            android:text="@string/exit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resultView" />
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/resultView"
+            android:id="@+id/textView1"
+            style="@style/CustomTextViewTheme"
             android:layout_width="match_parent"
-            android:layout_height="185dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:onClick="copyToClipboard"
-            android:textAlignment="center"
-            android:textColor="@color/customResultTextColor"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.031"
-            tools:text="aad" />
+            android:layout_height="41dp"
+            android:text="@string/enter_base_frequency_value_hz" />
 
-        <Button
-            android:id="@+id/button2"
+        <EditText
+            android:id="@+id/baseFrequency"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:onClick="calculateNewFrequency"
-            android:text="@string/calculate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+            android:layout_height="38dp"
+            android:ems="10"
+            android:hint="Base frequency"
+            android:inputType="number"
+            android:theme="@style/CustomEditText" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/CustomTextViewTheme"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:text="@string/enter_number_of_semitones" />
+
+        <EditText
+            android:id="@+id/numberOfSemitones"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:ems="10"
+            android:hint="Number of semitones"
+            android:inputType="number"
+            android:theme="@style/CustomEditText" />
+
+        <CheckBox
+            android:id="@+id/backwardCheckbox"
+            style="@style/CustomCheckboxTheme"
+            android:layout_width="match_parent"
+            android:button="@null"
+            android:checked="false"
+            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+            android:text="@string/calculate_backward"
+            android:textAlignment="viewStart"
+            android:textColor="@color/customTextViewColor"
+            android:theme="@style/CustomCheckboxTheme" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="11dp"
+                android:baselineAligned="false"
+                android:onClick="exitApp"
+                android:text="@string/exit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/resultView" />
+
+            <TextView
+                android:id="@+id/resultView"
+                android:layout_width="match_parent"
+                android:layout_height="185dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="copyToClipboard"
+                android:textAlignment="center"
+                android:textColor="@color/customResultTextColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button2"
+                app:layout_constraintVertical_bias="0.031"
+                tools:text="aad" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="calculateNewFrequency"
+                android:text="@string/calculate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>
